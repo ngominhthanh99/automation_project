@@ -4,6 +4,9 @@ from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
 from base.base_test import BaseTest
 
+from pages.login_page import LoginPage
+from utils.config_reader import ConfigReader
+
 import allure
 
 
@@ -14,6 +17,13 @@ import allure
 # @pytest.mark.usefixtures("setup")
 class TestCheckout(BaseTest):
     def test_checkout(self):
+
+        #Login first 
+        login = LoginPage(self.driver)
+        # login.login("standard_user", "secret_sauce")
+        login.login(ConfigReader.get_username(), ConfigReader.get_password())
+    
+        #checkout
         inventory = InventoryPage(self.driver)
         cart = CartPage(self.driver)
         checkout = CheckoutPage(self.driver)
