@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Test reports
+reports/
+allure-report/
+allure-results/
+
+# Environment
+.env
+.venv/
+env/
+venv/
+
+# VS Code settings
+.vscode/
+
+# Pytest cache
+.pytest_cache/
+
+# Log files
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db

@@ -5,11 +5,14 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    def wait_for_element(self, locator, timeout=10):
-        return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
+    def wait_for_element(self, locator):
+        return WebDriverWait(self.driver).until(EC.visibility_of_element_located(locator))
 
     def click(self, locator):
         self.wait_for_element(locator).click()
 
     def send_keys(self, locator, text):
         self.wait_for_element(locator).send_keys(text)
+        
+    def get_text(self, locator):
+        return self.wait_for_element(locator).text    
