@@ -13,8 +13,8 @@ jobs:
       fail-fast: false
       matrix:
         suite:
-          - tests/test_login.py
-          # - tests/test_checkout.py
+          # - tests/test_login.py
+          - tests/test_checkout.py
 
     steps:
       - name: Checkout repository
