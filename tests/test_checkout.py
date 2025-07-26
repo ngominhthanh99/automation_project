@@ -29,8 +29,10 @@ class TestCheckout(BaseTest):
         checkout = CheckoutPage(self.driver)
         inventory.add_products(3)
         inventory.click_cart()
+
         cart.click_checkout()
         checkout.information("John", "Doe", "70000")
+        
         checkout.click_continue_btn()
         checkout.click_finish_btn()
 
