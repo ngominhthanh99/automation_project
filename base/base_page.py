@@ -9,7 +9,8 @@ class BasePage:
 
     def wait_for_element(self, locator):
         timeout = ConfigReader.get_timeout()
-        return WebDriverWait(self.driver).until(EC.visibility_of_element_located(locator))
+        return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
+
 
     def click(self, locator):
         self.wait_for_element(locator).click()
