@@ -9,7 +9,7 @@ import allure
 @allure.title("Test Login Success")
 @allure.description("Verify user can login with valid credentials")
 @allure.severity(allure.severity_level.CRITICAL)
-
+@pytest.mark.usefixtures("setup")
 
 class TestLogin(BaseTest):
     def test_login(self):

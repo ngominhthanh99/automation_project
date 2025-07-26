@@ -14,7 +14,7 @@ import allure
 @allure.title("Test Checkout Success")
 @allure.description("Ensure user can complete checkout process")
 @allure.severity(allure.severity_level.BLOCKER)
-
+@pytest.mark.usefixtures("setup")
 class TestCheckout(BaseTest):
     def test_checkout(self):
 
