@@ -9,10 +9,10 @@ class CheckoutPage(BasePage):
     finish_btn = (By.XPATH, "//button[@id='finish']")
     confirmation = (By.XPATH, "//div[@class='complete-text']")
 
-    def information(self, firstname, lastname):
+    def information(self, firstname, lastname, postal_code):
         self.send_keys(self.first_name, firstname)
         self.send_keys(self.last_name, lastname)
-        self.send_keys(self.postal_code)
+        self.send_keys(self.postal_code, postal_code)
         
     def click_continue_btn(self):
         self.click(self.continue_btn)
