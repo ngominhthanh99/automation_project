@@ -14,13 +14,12 @@ import allure
 @allure.title("Test Checkout Success")
 @allure.description("Ensure user can complete checkout process")
 @allure.severity(allure.severity_level.BLOCKER)
-# @pytest.mark.usefixtures("setup")
+
 class TestCheckout(BaseTest):
     def test_checkout(self):
 
         #Login first 
         login = LoginPage(self.driver)
-        # login.login("standard_user", "secret_sauce")
         login.login(ConfigReader.get_username(), ConfigReader.get_password())
     
         #checkout
@@ -28,10 +27,16 @@ class TestCheckout(BaseTest):
         cart = CartPage(self.driver)
         checkout = CheckoutPage(self.driver)
 
+        #add 3 produtc
         inventory.add_products(3)
+
+        #click vao cart
         inventory.click_cart()
 
+        #click vao checkout    
         cart.click_checkout()
+
+        #dien form
         checkout.information("John", "Doe", "70000")
 
         checkout.click_continue_btn()

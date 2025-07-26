@@ -1,6 +1,5 @@
 import pytest
 from pages.login_page import LoginPage
-# from base.base_test import setup
 from base.base_test import BaseTest
 from utils.config_reader import ConfigReader
 import allure
@@ -11,15 +10,9 @@ import allure
 @allure.description("Verify user can login with valid credentials")
 @allure.severity(allure.severity_level.CRITICAL)
 
-# @pytest.mark.usefixtures("setup")
+
 class TestLogin(BaseTest):
     def test_login(self):
         login_page = LoginPage(self.driver)
-        # login_page.login(self.config["username"], self.config["password"])
         login_page.login(ConfigReader.get_username(), ConfigReader.get_password())
-
-    # def test_login(self):
-    #     #Login first 
-    #     login = LoginPage(self.driver)
-    #     # login.login("standard_user", "secret_sauce")
-    #     login.login(ConfigReader.get_username(), ConfigReader.get_password())        
+  
