@@ -10,6 +10,7 @@ class InventoryPage(BasePage):
         return self.wait_for_element(self.title).is_displayed()
 
     def add_products(self, count=3):
+        self.wait_for_element(self.add_buttons)
         buttons = self.driver.find_elements(*self.add_buttons)
         for btn in buttons[:count]:
             btn.click()
