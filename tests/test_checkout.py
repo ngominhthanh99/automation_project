@@ -3,6 +3,8 @@ from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
 from base.base_test import setup
+import allure
+
 
 @allure.suite("Checkout Tests")
 @allure.title("Test Checkout Success")

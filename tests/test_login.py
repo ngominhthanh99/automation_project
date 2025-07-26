@@ -1,6 +1,8 @@
 import pytest
 from pages.login_page import LoginPage
 from base.base_test import setup
+import allure
+
 
 @allure.suite("Login Tests")
 @allure.title("Test Login Success")
