@@ -13,7 +13,13 @@ import allure
 
 # @pytest.mark.usefixtures("setup")
 class TestLogin(BaseTest):
+    # def test_login(self):
+    #     login_page = LoginPage(self.driver)
+    #     # login_page.login(self.config["username"], self.config["password"])
+    #     login_page.login(ConfigReader.get_username(), ConfigReader.get_password())
+
     def test_login(self):
-        login_page = LoginPage(self.driver)
-        # login_page.login(self.config["username"], self.config["password"])
-        login_page.login(ConfigReader.get_username(), ConfigReader.get_password())
+        #Login first 
+        login = LoginPage(self.driver)
+        # login.login("standard_user", "secret_sauce")
+        login.login(ConfigReader.get_username(), ConfigReader.get_password())        
