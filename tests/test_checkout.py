@@ -2,7 +2,8 @@ import pytest
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
-from base.base_test import setup
+from base.base_test import BaseTest
+
 import allure
 
 
@@ -10,8 +11,8 @@ import allure
 @allure.title("Test Checkout Success")
 @allure.description("Ensure user can complete checkout process")
 @allure.severity(allure.severity_level.BLOCKER)
-@pytest.mark.usefixtures("setup")
-class TestCheckout:
+# @pytest.mark.usefixtures("setup")
+class TestCheckout(BaseTest):
     def test_checkout(self):
         inventory = InventoryPage(self.driver)
         cart = CartPage(self.driver)
