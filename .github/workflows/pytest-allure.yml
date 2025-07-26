@@ -9,12 +9,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     suite:
-    #       - tests/test_login.py
-    #       - tests/test_checkout.py
+    strategy:
+      fail-fast: false
+      matrix:
+        suite:
+          - tests/test_login.py
+          - tests/test_checkout.py
 
     steps:
       - name: Checkout repository
