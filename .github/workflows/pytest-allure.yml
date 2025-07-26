@@ -39,7 +39,7 @@ jobs:
           echo "CHROMEDRIVER=$(which chromedriver)" >> $GITHUB_ENV
 
       - name: Run Pytest and generate Allure results
-        run: pytest --alluredir=reports
+        run: pytest ${{ matrix.suite }} --alluredir=reports
 
       - name: Upload Allure Results as artifact
         uses: actions/upload-artifact@v4
