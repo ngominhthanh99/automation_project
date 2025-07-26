@@ -27,7 +27,7 @@ class TestCheckout(BaseTest):
         inventory = InventoryPage(self.driver)
         cart = CartPage(self.driver)
         checkout = CheckoutPage(self.driver)
-        
+
         inventory.add_products(3)
         inventory.click_cart()
 
