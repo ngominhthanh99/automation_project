@@ -7,7 +7,7 @@ import allure
 
 @allure.suite("Login Tests")
 @allure.title("Test Login Success")
-@allure.description("Verify user can login with valid credentials")
+@allure.description("Thanh test Login")
 @allure.severity(allure.severity_level.CRITICAL)
 @pytest.mark.usefixtures("setup")
 
