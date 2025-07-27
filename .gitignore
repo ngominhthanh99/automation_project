@@ -4,9 +4,9 @@ __pycache__/
 *.pyo
 
 # Test reports
-# reports/
-# allure-report/
-# allure-results/
+reports/
+allure-report/
+allure-results/
 
 # Environment
 .env
